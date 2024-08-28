@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="bg-gray-200 overflow-hidden">
+    <div class="overlay fixed w-full h-screen z-[9999] bg-zinc-200 top-0 left-0">
+        <div class="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] p-4 border bg-white rounded">
+            <input class="nameinput px-3 py-2 rounded-md border outline-none" type="text" placeholder="Enter Your Name">
+            <button class="setbtn px-3 py-2 bg-blue-500 text-white rounded-md">Set My Name</button>
+        </div>
+    </div>    
+
+    <div class="w-[200px] py-2 absolute left-[2%] px-5">
+        <h3 class="font-semibold mb-2">Join Group</h3>
+        <select class="room-select w-full py-1 outline-none">
+            <option value="all">All</option>
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="english">English</option>
+            <option value="coding">Coding</option>
+            <option value="hindi">Hindi</option>
+        </select>
+    </div>
+
+    <div class="container mx-auto max-w-3xl shadow-lg rounded-lg mt-5">
+        <div class="px-5 py-5 flex justify-between items-center bg-white border-b-2">
+            <div class="font-semibold text-2xl flex items-center gap-2">
+                <h3>Chat Room</h3>
+                <h3 class="-mb-1 ml-3 tracking-tight text-sm"><span class="onlineusers"></span> People Live.</h3>
+            </div>
+            <h3 class="typing italic text-sm opacity-50 tracking-tight"></h3>   
+            <div>
+                <span class="username font-semibold"></span> is chatting <a href="/" class="bg-red-500 text-white px-3 py-2 ml-3 rounded-md text-sm">reset now.</a>
+            </div>
+        </div>
+
+        <div class="w-full messagebox px-5 py-10 overflow-y-auto" style="height: 350px;">
+            <div class="messages flex-col space-y-3"></div>
+        </div>
+
+        <div class="px-5 py-5 bg-white border-t-2">
+            <div class="relative flex">
+                <textarea class="textarea resize-none w-full px-5 py-3 rounded-full border focus:outline-none focus:border-blue-500" placeholder="Type your message"></textarea>
+                <button class="absolute send right-0 top-1/2 -translate-y-1/2 mr-5 text-blue-500 rounded-full"><i class="ri-send-plane-2-fill text-3xl"></i></button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>
